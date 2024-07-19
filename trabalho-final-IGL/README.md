@@ -1,17 +1,14 @@
-## Classificador de Assuntos de Atendimento
+
+## Autenticação Facial para Prevenção de Fraudes - Banco X
 
 **Introdução**
 
-Este projeto visa desenvolver um modelo de Machine Learning para classificar automaticamente os assuntos dos atendimentos no canal de chat da QuantumFinance. O objetivo é otimizar o direcionamento dos chamados para as áreas especialistas, aprimorando a experiência do cliente e a eficiência da empresa.
+O setor de fraudes do Banco X identificou um problema recorrente de clientes que contestam a contratação de serviços específicos, como crédito pessoal, mesmo após a realização dos protocolos de segurança da senha. Apesar da autenticação por senha, o banco arca com reembolsos e medidas de contenção para evitar processos judiciais, pois os clientes alegam terem sido vítimas de invasão por hackers ou outras atividades fraudulentas.
 
-**Serviço Utilizado**
+**Proposta**
 
-Para a criação do modelo classificador, será utilizado o **Amazon Comprehend**, um serviço de processamento de linguagem natural (NLP) da AWS. O Comprehend oferece diversas funcionalidades, incluindo:
+Para mitigar esse risco e fortalecer a segurança nas transações, propõe-se a implementação de um sistema de autenticação facial complementar à senha, utilizando a plataforma **Amazon Rekognition** da AWS.
 
-* **Análise de Sentimento:** Determina a polaridade emocional de um texto (positivo, negativo, neutro).
-* **Extração de Entidades:** Identifica e classifica entidades nomeadas em um texto (pessoas, lugares, organizações).
-* **Detecção de Tópico:** Classifica um texto em um conjunto predefinido de tópicos.
-* **Classificação de Texto:** Atribui um rótulo predefinido a um texto com base em seu conteúdo.
 
 Neste projeto, focaremos na funcionalidade de **Classificação de Texto** para categorizar os assuntos dos atendimentos.
 
@@ -25,40 +22,42 @@ Grupo:
 | Gildo Moraes             | RM 352486      | 5DTSR |
 | Luiz Henrique             | RM 352631      | 5DTSR |
 
+**Amazon Rekognition**
+
+O Amazon Rekognition é um serviço de **visão computacional e aprendizado de máquina** baseado em nuvem que oferece diversas funcionalidades para análise de imagens e vídeos, incluindo:
+
+* **Detecção de rostos:** Localiza e identifica rostos em imagens e vídeos.
+* **Reconhecimento facial:** Compara rostos em imagens e vídeos com rostos em um banco de dados para verificar a identidade de uma pessoa.
+* **Detecção de emoções:** Analisa as emoções presentes em rostos em imagens e vídeos.
+* **Detecção de atividades:** Reconhece atividades como comer, beber e falar em imagens e vídeos.
+* **Análise de cenas:** Identifica e classifica objetos, cenas e atividades em imagens e vídeos.
+
+**Solução Proposta**
+
+O sistema de autenticação facial funcionará da seguinte maneira:
+
+1. **Cadastro de imagens:** Os clientes cadastrarão suas imagens faciais no banco de dados do sistema durante a abertura de conta ou solicitação de serviços.
+2. **Autenticação por senha e rosto:** Ao realizar transações que exigem alto nível de segurança, como solicitação de crédito, o cliente será solicitado a se autenticar com sua senha e realizar uma verificação facial.
+3. **Validação facial:** O Amazon Rekognition utilizará as funcionalidades de detecção e reconhecimento facial para comparar a imagem capturada em tempo real com a imagem cadastrada do cliente.
+4. **Detecção de vivacidade:** Para garantir que o cliente esteja realmente presente e não utilizando uma foto estática, a detecção de vivacidade verificará se a imagem capturada apresenta características de um rosto real, como piscar ou mover a cabeça.
+5. **Autenticação bem-sucedida:** Se a autenticação facial for bem-sucedida, a transação será autorizada.
+6. **Autenticação malsucedida:** Se a autenticação facial falhar, o cliente será direcionado para uma esteira de atendimento dedicada, e as imagens da tentativa de autenticação serão encaminhadas para a área de IA para análise e aprimoramento do modelo.
+
+**Benefícios**
+
+A implementação da autenticação facial trará diversos benefícios para o Banco X:
+
+* **Redução de fraudes:** A autenticação facial dificulta a realização de transações fraudulentas por terceiros, pois exige a presença física do cliente.
+* **Maior segurança para os clientes:** Os clientes terão mais segurança ao realizar transações, pois a autenticação por dois fatores (senha e rosto) torna mais difícil o acesso não autorizado às suas contas.
+* **Diminuição de custos:** A redução de fraudes levará à diminuição de custos com reembolsos e medidas de contenção.
+* **Melhoria da experiência do cliente:** A autenticação facial proporcionará uma experiência mais rápida e segura para os clientes, reduzindo filas e tempo de espera.
+* **Geração de dados para análise:** As imagens da tentativa de autenticação facial poderão ser utilizadas para aprimorar o modelo de autenticação e identificar padrões de comportamento fraudulento.
 
 
-**Dados**
+A implementação da autenticação facial com o Amazon Rekognition é uma solução eficaz para combater fraudes e aumentar a segurança das transações no Banco X. Além de reduzir custos e melhorar a experiência do cliente, o sistema também gerará dados valiosos para análise e aprimoramento contínuo.
 
-O modelo será treinado e validado utilizando o dataset **"tickets_reclamacoes_classificados.csv"**, disponível no seguinte link:
 
-```
-https://dados-ml-pln.s3.sa-east-1.amazonaws.com/tickets_reclamacoes_classificados.csv
-```
 
-Este dataset contém registros de atendimentos no chat, com o texto da mensagem do cliente e a respectiva categoria do assunto (rótulo).
-
-**Metodologia**
-
-1. **Pré-processamento:** O dataset será pré-processado para remover ruídos, normalizar o texto e converter em um formato adequado para o modelo de Machine Learning.
-2. **Treinamento do Modelo:** O modelo de Classificação de Texto do Amazon Comprehend será treinado utilizando o dataset pré-processado.
-3. **Validação do Modelo:** O modelo treinado será validado em um conjunto de dados separado (25% do dataset original) para avaliar seu desempenho e garantir que ele não esteja apenas memorizando os dados de treinamento.
-4. **Otimização do Modelo:** Caso o modelo não atinja o score desejado na métrica F1 Score (acima de 75%), serão realizadas técnicas de ajuste de hiperparâmetros e otimização de dados para melhorar sua performance.
-5. **Implementação:** O modelo final será implementado em uma aplicação que permita a classificação automática dos assuntos dos atendimentos em tempo real.
-
-**Plataforma de Machine Learning**
-
-O desenvolvimento da solução será realizado na plataforma **Amazon Web Services (AWS)**, utilizando os serviços:
-
-* **Amazon Comprehend:** Para treinamento e validação do modelo de Classificação de Texto.
-* **Amazon S3:** Para armazenamento do dataset.
-* **AWS Lambda:** Para execução da função de classificação automática.
-* **Amazon API Gateway:** Para criar uma API que permita a integração com o canal de chat da QuantumFinance.
-
-**Objetivos**
-
-Ao implementar este modelo de classificação de assuntos, a QuantumFinance poderá otimizar o direcionamento dos chamados no canal de atendimento ao cliente, proporcionando uma experiência mais rápida e eficiente para seus clientes. Além disso, a solução poderá gerar insights valiosos sobre os principais temas dos atendimentos, auxiliando na identificação de oportunidades de melhoria nos produtos e serviços da empresa.
-
-Os resultados obtidos com a implementação do modelo de classificação de assuntos utilizando o SDK do Amazon Comprehend serão apresentados em um notebook em Python.
 
 
 
