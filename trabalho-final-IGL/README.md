@@ -1,4 +1,4 @@
-## Classificador de Assuntos de Atendimento ao Cliente - QuantumFinance
+## Classificador de Assuntos de Atendimento
 
 **Introdução**
 
@@ -14,6 +14,18 @@ Para a criação do modelo classificador, será utilizado o **Amazon Comprehend*
 * **Classificação de Texto:** Atribui um rótulo predefinido a um texto com base em seu conteúdo.
 
 Neste projeto, focaremos na funcionalidade de **Classificação de Texto** para categorizar os assuntos dos atendimentos.
+
+Participantes do projeto:
+
+Grupo:
+
+| Nome    | RM            | Turma |
+| :----------------------- | :------------- | :-----: |
+| Igor Mazzeto             | RM 352368      | 5DTSR |
+| Gildo Moraes             | RM 352486      | 5DTSR |
+| Luiz Henrique             | RM 352631      | 5DTSR |
+
+
 
 **Dados**
 
