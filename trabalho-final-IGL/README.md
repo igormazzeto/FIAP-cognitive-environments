@@ -1,5 +1,5 @@
 
-## Autenticação Facial para Prevenção de Fraudes - Banco X
+## Autenticação Facial para Prevenção de Fraudes
 
 **Introdução**
 
