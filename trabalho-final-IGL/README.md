@@ -22,6 +22,8 @@ Grupo:
 | Gildo Moraes             | RM 352486      | 5DTSR |
 | Luiz Henrique             | RM 352631      | 5DTSR |
 
+Jupyter Notebook disponível [aqui](https://github.com/igormazzeto/FIAP-cognitive-environments/tree/main/trabalho-final-IGL).
+
 **Amazon Rekognition**
 
 O Amazon Rekognition é um serviço de **visão computacional e aprendizado de máquina** baseado em nuvem que oferece diversas funcionalidades para análise de imagens e vídeos, incluindo:
@@ -54,10 +56,4 @@ A implementação da autenticação facial trará diversos benefícios para o Ba
 * **Geração de dados para análise:** As imagens da tentativa de autenticação facial poderão ser utilizadas para aprimorar o modelo de autenticação e identificar padrões de comportamento fraudulento.
 
 
-A implementação da autenticação facial com o Amazon Rekognition é uma solução eficaz para combater fraudes e aumentar a segurança das transações no Banco X. Além de reduzir custos e melhorar a experiência do cliente, o sistema também gerará dados valiosos para análise e aprimoramento contínuo.
-
-
-
-
-
-
+A implementação da autenticação facial com o Amazon Rekognition é uma solução eficaz para combater fraudes e aumentar a segurança das transações de qualquer intituição financeira. Além de reduzir custos e melhorar a experiência do cliente, o sistema também gerará dados valiosos para análise e aprimoramento contínuo.
