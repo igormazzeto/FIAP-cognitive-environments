@@ -22,7 +22,7 @@ Grupo:
 | Gildo Moraes             | RM 352486      | 5DTSR |
 | Luiz Henrique             | RM 352631      | 5DTSR |
 
-Jupyter Notebook disponível [aqui](https://github.com/igormazzeto/FIAP-cognitive-environments/tree/main/trabalho-final-IGL).
+Jupyter Notebook disponível [aqui](https://github.com/igormazzeto/FIAP-cognitive-environments/blob/main/trabalho-final-IGL/Projeto_5dtrs.ipynb).
 
 **Amazon Rekognition**
 
