@@ -3,7 +3,7 @@
 
 **Introdução**
 
-O setor de fraudes do Banco X identificou um problema recorrente de clientes que contestam a contratação de serviços específicos, como crédito pessoal, mesmo após a realização dos protocolos de segurança da senha. Apesar da autenticação por senha, o banco arca com reembolsos e medidas de contenção para evitar processos judiciais, pois os clientes alegam terem sido vítimas de invasão por hackers ou outras atividades fraudulentas.
+O setor de fraudes da Quantumn Finance identificou um problema recorrente de clientes que contestam a contratação de serviços específicos, como crédito pessoal, mesmo após a realização dos protocolos de segurança da senha. Apesar da autenticação por senha, o banco arca com reembolsos e medidas de contenção para evitar processos judiciais, pois os clientes alegam terem sido vítimas de invasão por hackers ou outras atividades fraudulentas.
 
 **Proposta**
 
